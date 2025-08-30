@@ -38,44 +38,41 @@ try{
 };
   return (
     <>
-    <div className={styles.Content}>
-      <div className={styles.header}>
-        <h1>Registrate</h1>
-      </div>
-      <div>
-        <form onSubmit={handleSubmit}>
-        <input
-         type="email" 
-         name="email" 
-         id="Email"
-         placeholder="Email" 
-         value= {formData.email}
-         onChange={handleChange}
-         className={styles.input}
-        />
-        <input 
-        type="password" 
-        name="password" 
-        id="Password" 
-        placeholder="Password "
-        value= {formData.password}
-        onChange={handleChange}
-        className={styles.input}
-        />
-        <button className={styles.Content2}>Register</button>
-        </form>
-      </div>
-      <div>
-        <p>
-          si ya estas registrado apreta{" "}
-          <a
-            href="#"
-            onClick={onClickLogin}
-          >
-            aqui
-          </a>
-        </p>
-      </div>
+      <div className={styles.Content}>
+        <div className={styles.header}>
+          <h1>Registrate</h1>
+        </div>
+        <div>
+          <form onSubmit={handleSubmit}>
+            <input
+              type="email"
+              name="email"
+              id="Email"
+              placeholder="Email"
+              value={formData.email}
+              onChange={handleChange}
+              className={styles.input}
+            />
+            <input
+              type="password"
+              name="password"
+              id="Password"
+              placeholder="Password "
+              value={formData.password}
+              onChange={handleChange}
+              className={styles.input}
+            />
+            <button className={styles.Content2}>Register</button>
+          </form>
+        </div>
+        <div>
+          <p>
+            si ya estas registrado apreta{" "}
+            <a href="#" onClick={onClickLogin}>
+              aqui
+            </a>
+          </p>
+        </div>
       </div>
     </>
   );

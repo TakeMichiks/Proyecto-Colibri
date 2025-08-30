@@ -1,27 +1,31 @@
-import { useState } from 'react'
-import './App.css'
-import Register from './Component/Register'
-import Login from "./Component/Login"
+import { useState } from "react";
+import "./App.css";
+import Register from "./Component/Register";
+import Login from "./Component/Login";
 
 function App() {
-  const [activeSection, setActiveSection] = useState('login');
+  const [activeSection, setActiveSection] = useState("login");
 
-  const handleShowLogin = ()  => {
-      setActiveSection("login");
+  const handleShowLogin = () => {
+    setActiveSection("login");
   };
 
   const handleShowRegister = () => {
-    setActiveSection('register');
+    setActiveSection("register");
   };
 
   return (
     <>
       <div>
-        {activeSection === 'login' && <Login onClickRegister={handleShowRegister} />}
-        {activeSection === 'register' && <Register onClickLogin={handleShowLogin} />}
+        {activeSection === "login" && (
+          <Login onClickRegister={handleShowRegister} />
+        )}
+        {activeSection === "register" && (
+          <Register onClickLogin={handleShowLogin} />
+        )}
       </div>
     </>
-  )
-};
+  );
+}
 
-export default App
+export default App;
