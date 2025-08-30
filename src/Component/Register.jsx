@@ -1,5 +1,5 @@
 import React, { useState} from "react";
-
+import styles from "./stylesRegister.module.css"
 function Register({ onClickLogin }) {
 
     const [formData, setFormData]= useState ({
@@ -38,8 +38,9 @@ try{
 };
   return (
     <>
-      <div>
-        <h1>¡Hola Mundo!</h1>
+    <div className={styles.Content}>
+      <div className={styles.header}>
+        <h1>Registrate</h1>
       </div>
       <div>
         <form onSubmit={handleSubmit}>
@@ -50,6 +51,7 @@ try{
          placeholder="Email" 
          value= {formData.email}
          onChange={handleChange}
+         className={styles.input}
         />
         <input 
         type="password" 
@@ -58,8 +60,9 @@ try{
         placeholder="Password "
         value= {formData.password}
         onChange={handleChange}
+        className={styles.input}
         />
-        <button>Register</button>
+        <button className={styles.Content2}>Register</button>
         </form>
       </div>
       <div>
@@ -72,6 +75,7 @@ try{
             aqui
           </a>
         </p>
+      </div>
       </div>
     </>
   );

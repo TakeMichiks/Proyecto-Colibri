@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import axios from "axios"
-
+import styles from "./stylesLogin.module.css"
 function Login ( { onClickRegister }) {
   
   const [formData, setFormData] = useState({
@@ -40,41 +40,46 @@ function Login ( { onClickRegister }) {
 };
   return (
       <>
-        <div>
+      <div className={styles.Content}>
+        <div className={styles.header}>
             <h1>Login</h1>
       </div>
-      <div>
-        <form onSubmit={handleSubmit}>
-        <input
-         type="email" 
-         name="email" 
-         id="Email"
-         placeholder="Email" 
-         value= {formData.email}
-         onChange={handleChange}
-        />
+    <div >
+      <form onSubmit={handleSubmit}>
+            <input
+            type="email" 
+            name="email" 
+            id="Email"
+            placeholder="Email" 
+            value= {formData.email}
+            onChange={handleChange}
+            className={styles.input}
+            />
         <input 
-        type="password" 
-        name="password" 
-        id="Password" 
-        placeholder="Password "
-        value= {formData.password}
-        onChange={handleChange}
+            type="password" 
+            name="password" 
+            id="Password" 
+            placeholder="Password"
+            value= {formData.password}
+            onChange={handleChange}
+            className={styles.input}
         />
-        <button>Login</button>
-        </form>
-        </div>
+        <button className={styles.Content2}>Login</button>
+      </form>
+     </div>
         <div>
         <p>
           si aun no te haz registrado{" "}
           <a
             href="#"
             onClick={onClickRegister}
+            
           >
             aqui
           </a>
-          </p>
+         </p>
         </div>
+    </div>
     </>
 );
 }
